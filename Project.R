@@ -14,6 +14,7 @@ library(renv)
 library(stringr)
 library(purrr)
 library(shinydashboard)
+library(usethis)
 #Descarga de datos
 calcular_retornos_semanales <- function(ticker) {
   tryCatch({
@@ -145,4 +146,5 @@ server <- function(input, output) {
 }
 
 shinyApp(ui, server)
-
+# Guardar el entorno de trabajo
+renv::snapshot()
