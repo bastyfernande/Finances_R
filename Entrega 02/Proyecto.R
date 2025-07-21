@@ -63,7 +63,7 @@ get_datos_diarios <- function(ticker) {
 }
 
 # Listado de tickers
-tickers <- read_xlsx("C:\\Users\\basti\\Downloads\\S&P 500 Companies (Standard and Poor 500).xlsx")
+tickers <- read_xlsx("S&P 500 Companies (Standard and Poor 500).xlsx")
 labels <- tickers$Symbol
 #Obtener los datos diarios de cada ticker
 diarios_USA <- map_dfr(labels, get_datos_diarios)
