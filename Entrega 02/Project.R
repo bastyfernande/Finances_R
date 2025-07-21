@@ -77,7 +77,7 @@ ultimos <- resultados %>%
   ungroup()
 ultimos %>% arrange(desc(retorno_promedio))
 #Listado de tickers chilenos
-tickers_chilenos <- read_xlsx("C:\\Users\\basti\\OneDrive\\Escritorio\\Empresas_Chilenas_Yahoo_con_Datos_Financieros.xlsx")
+tickers_chilenos <- read_xlsx("Empresas_Chilenas_Yahoo_con_Datos_Financieros.xlsx")
 labels_chilenos <- tickers_chilenos$Tickets
 #Aplicar la función a cada ticker chileno
 resultados_chilenos <- map_dfr(labels_chilenos, calcular_retornos_semanales)
@@ -148,4 +148,5 @@ server <- function(input, output) {
 shinyApp(ui, server)
 # Guardar el entorno de trabajo
 renv::snapshot()
-# gola.
+
+getwd() 
