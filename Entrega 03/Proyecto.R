@@ -15,6 +15,7 @@ library(purrr)
 library(shinydashboard)
 library(usethis)
 library(renv)
+
 #Descarga de datos
 calcular_retornos_semanales <- function(ticker) {
   tryCatch({
@@ -23,7 +24,7 @@ calcular_retornos_semanales <- function(ticker) {
     df$date <- as.Date(rownames(df))
     col_name <- paste0(ticker, ".Close")
     df <- df %>% select(date, !!sym(col_name))
-    colnames(df)[2] <- "Close"
+    colnames(df)[2] <- "Close"           #Se selecciona la columna de precios de cierre
     
     df <- df %>%
       mutate(log_precios = log(Close),
