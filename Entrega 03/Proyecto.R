@@ -38,7 +38,7 @@ calcular_retornos_semanales <- function(ticker) {
       mutate(
         ticker = ticker,
         retorno_simple = exp(retorno_promedio) - 1
-      )
+      )                        #Se cálcula el retorno diario promedio semanal.
     
     df
   }, error = function(e) NULL)
@@ -86,7 +86,9 @@ ultimos_chilenos <- resultados_chilenos %>%
   group_by(ticker) %>% 
   filter(semana == max(semana)) %>%
   ungroup()
+#Se hace el ranking semanal. Así detectamos momentos en los stocks de los mercados.
 TOP10_CL <- ultimos_chilenos %>% arrange(desc(retorno_promedio)) %>% slice_head(n= 10) 
+
 TOP10_USA <- ultimos %>% arrange(desc(retorno_promedio)) %>% slice_head(n= 10) 
 # Ahora podemos graficarlos
 
