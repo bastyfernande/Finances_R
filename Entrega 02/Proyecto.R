@@ -10,14 +10,12 @@ library(tidyquant)
 library(shiny)
 library(flexdashboard)
 library(shinythemes)
-library(renv)
 library(stringr)
 library(purrr)
 library(shinydashboard)
 library(usethis)
 library(renv)
 init()
-[1] "C:/Users/basti/OneDrive/Escritorio/R for finances/Finances_R/Entrega 03"
 #Descarga de datos
 calcular_retornos_semanales <- function(ticker) {
   tryCatch({
