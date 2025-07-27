@@ -149,4 +149,4 @@ shinyApp(ui, server)
 # Guardar el entorno de trabajo
 renv::snapshot()
 
-getwd() 
+C:\Users\basti\OneDrive\Escritorio\R for finances\Finances_R
