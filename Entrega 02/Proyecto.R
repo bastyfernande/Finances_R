@@ -15,6 +15,9 @@ library(stringr)
 library(purrr)
 library(shinydashboard)
 library(usethis)
+library(renv)
+init()
+[1] "C:/Users/basti/OneDrive/Escritorio/R for finances/Finances_R/Entrega 03"
 #Descarga de datos
 calcular_retornos_semanales <- function(ticker) {
   tryCatch({
@@ -148,5 +151,3 @@ server <- function(input, output) {
 shinyApp(ui, server)
 # Guardar el entorno de trabajo
 renv::snapshot()
-
-C:\Users\basti\OneDrive\Escritorio\R for finances\Finances_R
